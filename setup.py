@@ -15,6 +15,7 @@ setup(
     url='http://github.com/unaizalakain/django-feedback/',
     keywords = ['blog', 'django', 'feedback', 'ajax', 'user', 'customer', 'comment'],
     package_data = {'feedback': ['static/feedback/*', 'static/feedback/images/*', 'CREDITS']},
+    install_requires=['yammy'],
     packages=[
         'feedback',
     ],
