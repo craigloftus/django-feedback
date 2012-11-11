@@ -7,7 +7,7 @@ div#feedback_popup.hiding
     form.feedback [action="{% url feedback request.path %}"][method=POST]
         {% csrf_token %}
 
-        div.name.error
+        div.email.error
         label [for=email] {% trans 'email (optional)' %}
         input [name=email]
         
