@@ -12,9 +12,10 @@ setup(
     author='Jared Forsyth',
     author_email='jabapyth@gmail.com',
     license='BSD',
-    url='http://github.com/jabapyth/django-feedback/',
+    url='http://github.com/unaizalakain/django-feedback/',
     keywords = ['blog', 'django', 'feedback', 'ajax', 'user', 'customer', 'comment'],
-    package_data = {'feedback':['media/*.js','media/*.css','media/images/*','CREDITS']},
+    package_data = {'feedback': ['static/feedback/*', 'static/feedback/images/*', 'CREDITS']},
+    install_requires=['yammy'],
     packages=[
         'feedback',
     ],
