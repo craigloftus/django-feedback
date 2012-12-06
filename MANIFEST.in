@@ -1,0 +1,4 @@
+include CREDITS
+recursive-include feedback/static *
+recursive-include feedback/locale *
+recursive-include feedback/templates *
