@@ -41,10 +41,9 @@ class FeedbackView(CreateView):
                         settings.FEEDBACK_EMAIL_LIST,
                         fail_silently=False,
                         )
-            except:
-                return HttpResponse(json.dumps({'error': _('Failed to send email')}))
+            except Exception as e:
+                return HttpResponse(json.dumps({'error': 'Failed to send email (%s)' % e.strerror}))
         return HttpResponse(json.dumps({}))
 
     def form_invalid(self, form):
         return HttpResponse(json.dumps({'errors': form.errors}))
-
