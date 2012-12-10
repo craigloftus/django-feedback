@@ -27,14 +27,18 @@ class FeedbackView(CreateView):
 
     def form_valid(self, form):
         response = super(FeedbackView, self).form_valid(form)
-        if hasattr(settings, 'FEEDBACK_EMAIL'):
+        if hasattr(settings, 'FEEDBACK_EMAIL_LIST'):
             d = form.cleaned_data
+            try:
+                from_email = settings.DEFAULT_FROM_EMAIL
+            except NameError:
+                from_email = settings.SERVER_EMAIL
             try:
                 send_mail(
                         'Feedback received: {}'.format(d['subject']),
                         'email: {} \n\n {}'.format(d['email'], d['text']),
-                        settings.SERVER_EMAIL,
-                        [settings.FEEDBACK_EMAIL],
+                        from_email,
+                        settings.FEEDBACK_EMAIL_LIST,
                         fail_silently=False,
                         )
             except:
