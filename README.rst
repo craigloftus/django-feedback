@@ -11,10 +11,16 @@ user to fill.
 
 + Sync the database
 
-+ Use it (only requires template modifications)::
++ Include 'feedback.urls' in your urlconf somewhere
 
-    <!-- in header block -->
-    {% include "feedback/header.html" %}
-    
-    <!-- in body block -->
-    {% include "feedback/button.html" %}
++ Include in your templates:
+
+    <!-- with your css -->
+        <link rel="stylesheet" href="{{ STATIC_URL }}feedback/main.css">
+
+    <!-- with your scripts, after jquery -->
+        <script src="{{ STATIC_URL }}feedback/jquery.form.js"></script>
+        <script src="{{ STATIC_URL }}feedback/main.js"></script> 
+
+    <!-- somewhere after that -->
+        {% include "feedback/form.html" %}
