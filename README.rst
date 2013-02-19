@@ -8,6 +8,14 @@ user to fill.
 
     INSTALLED_APPS += ('feedback',)
 
++ Configure settings
+
+    + FEEDBACK_EMAIL_LIST
+        If not set, no emails will be sent (feedback is stored in the
+        database either way)
+        Needs to be a list of email addresses ready for django's send_mail()
+        function. A sane value may be derived fro ADMINS or MANAGERS, eg:
+        FEEDBACK_EMAIL_LIST = ['{} <{}>'.format(name, address) for name, address in MANAGERS]
 
 + Sync the database
 
