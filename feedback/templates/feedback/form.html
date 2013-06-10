@@ -1,3 +1,4 @@
+{% load url from future %}
 {% load i18n %}
 
 <button id="feedback_button" class="white left normal" data-toggle="modal" data-target="#feedback_modal" data-backdrop="static">
@@ -11,7 +12,7 @@
         <h3 id="myModalLabel">Feedback</h3>
     </div>
 
-    <form action="{% url feedback request.path %}" class="feedback" method="POST">
+    <form action="{% url 'feedback' request.path %}" class="feedback" method="POST">
         {% csrf_token %}
 
         <div class="modal-body">
