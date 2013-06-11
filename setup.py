@@ -8,7 +8,7 @@ def read(fname):
 
 setup(
     name='django-feedback',
-    version='0.5',
+    version='0.6',
     description='A pluggable user feedback app',
     author='Jared Forsyth',
     author_email='jabapyth@gmail.com',
